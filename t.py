@@ -13,13 +13,13 @@ def send_echo(message):
     answer = "В городе" + message.text + " сейчас " + w.get_detailed_status() + "\n"
     answer += "Температура сейчас в районе" + str(temp) + "\n\n"
 
-if temp < 10:
+    if temp < 10:
 	answer += "Сейчас ппц холодно, одевайся как танк!"
-elif temp < 20:
+    elif temp < 20:
 	answer += "сейчас холодно, оденься потеплее."
-elif temp > 20:
+    elif temp > 20:
 	answer += "Температура норм, одевай что угодно,"
 
-bot.send_message(message.chat.id, answer)
+    bot.send_message( message.chat.id, answer )
 
 bot.polling( none_stop = True )# your code goes here# your code goes here
