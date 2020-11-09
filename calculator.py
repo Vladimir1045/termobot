@@ -1,6 +1,12 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+def is_number(n):
+    for c in n:
+        if c not in '0123456789.':
+            return False
+    return True
+
 # Разбираем строчку по токенам
 # На выходе список токенов
 def parse_token(ls):
@@ -12,7 +18,7 @@ def parse_token(ls):
         # print("%d:%d=%s" % (b,e,ls[b:e]))
         if ls[b:e].isdigit():
             # парсим число
-            while ls[b:e].isdigit():
+            while is_number(ls[b:e]):
                 if e >= len(ls):
                     break
                 e += 1
@@ -44,7 +50,7 @@ def transform(inp):
     out = []
     for token in inp:
         # print("Token: '%s'" % token)
-        if token.isdigit():
+        if is_number(token):
             out.append(token)
             # print("Digit: %s" % out)
             continue
