@@ -23,6 +23,7 @@ def send_echo(message):
     elif temp > 20:
         answer += "Температура норм, одевай что угодно,"
 
-    bot.send_message( message.chat.id, answer )
+    bot.send_message(message.chat.id, answer)
 
-bot.polling( none_stop = True )# your code goes here# your code goes here
+
+bot.polling(none_stop=True)   # your code goes here# your code goes here
