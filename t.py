@@ -1,13 +1,15 @@
 import pyowm
 import telebot
-from bot_config import Token
+from bot_config import Token, API_Token
 
-owm = pyowm.OWM ('' 'Language'  == "rus" )
+owm = pyowm.OWM('' 'Language' == "rus")
+mgr = owm.weather_manager()
 bot = telebot.TeleBot(Token)
+
 
 @bot.message_handler(content_types=['text'])
 def send_echo(message):
-    observation = owm.weather_at_place( message.text )
+    observation = mgr.weather_at_place(message.text)
     w = observation.get_weather()
     temp = w.get_temperature('celsius')["temp"]
 
