@@ -93,12 +93,12 @@ def result(formula):
             # Это операция
             op2 = float(stack.pop())
             op1 = float(stack.pop())
-            print(f'{op1} {t} {op2}')
+            # print(f'{op1} {t} {op2}')
             stack.append(op[t]['func'](op1, op2))
         else:
             # Это, вероятно, число
             if t.isdigit:
-                print(f'push {t}')
+                # print(f'push {t}')
                 stack.append(t)
             else:
                 # Ошибка
