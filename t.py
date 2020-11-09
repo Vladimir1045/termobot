@@ -37,9 +37,8 @@ def send_echo(message):
         log.error(f'Ошибка {e}')
         bot.send_message(message.chat.id, f'Не могу сказать тк {e}')
         return
-    advise = get_advise(temp)
     bot.send_message(message.chat.id, f'В городе {message.text} сейчас {weather.detailed_status}\n'
-                                      f'Температура сейчас в районе {temp}\n\n{advise}')
+                                      f'Температура сейчас в районе {temp}\n\n{get_advise(temp)}')
 
 
 log.info('Начали')
