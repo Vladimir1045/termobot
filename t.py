@@ -1,8 +1,9 @@
 import pyowm
 import telebot
+from bot_config import Token
 
 owm = pyowm.OWM ('' 'Language'  == "rus" )
-bot = telebot.TeleBot("")
+bot = telebot.TeleBot(Token)
 
 @bot.message_handler(content_types=['text'])
 def send_echo(message):
