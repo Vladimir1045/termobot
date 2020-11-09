@@ -2,7 +2,7 @@ import pyowm
 import telebot
 from bot_config import Token, API_Token
 
-owm = pyowm.OWM('' 'Language' == "rus")
+owm = pyowm.OWM(API_Token)
 mgr = owm.weather_manager()
 bot = telebot.TeleBot(Token)
 
